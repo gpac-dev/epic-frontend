@@ -1,0 +1,155 @@
+/* Login Content CSS ------------------------- */
+.login-cont {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 600px;
+  grid-template-rows: 1fr;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../../assets/2x/dt_bckg.jpg");
+  background-size: cover;
+  overflow-y: hidden;
+}
+.login-cont .login-cont-left {
+  position: relative;
+  height: 100vh;
+  background-image: url("../../assets/2x/wolf_arrow.png");
+  background-size: contain;
+  background-position: center left;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+}
+.login-cont .login-cont-right {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.login-cont .login-cont-right .login-logo img {
+  position: relative;
+  top: 50px;
+  right: 50px;
+  width: 100%;
+}
+.login-cont .login-cont-right .login-form {
+  position: relative;
+  width: 80%;
+  height: 350px;
+  z-index: 30;
+}
+.login-cont .login-cont-right .login-form input {
+  position: relative;
+  width: 250px;
+  height: 50px;
+  padding: 0px 10px;
+  border-radius: 3px;
+  background-color: #242a33;
+  border: none;
+  margin-bottom: 30px;
+  font-size: 16px;
+  font-weight: 200;
+  color: white;
+}
+.login-cont .login-cont-right .login-form button {
+  position: relative;
+  width: 120px;
+  padding: 10px 0px;
+  background-color: #4056f4;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-weight: 400;
+  font-size: 16px;
+}
+.login-cont .login-cont-right .login-form p {
+  font-weight: 200;
+  color: #9aa0af;
+}
+.login-cont .login-cont-left .login-quote {
+  position: relative;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+  color: white;
+  z-index: 30;
+  font-family: "Montserrat";
+  font-size: 2em;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.login-cont .login-cont-left .login-quote:before {
+  position: absolute;
+  content: "";
+  width: 150px;
+  left: 100px;
+  height: 150px;
+  bottom: 80px;
+  background-image: url("../../assets/dots.svg");
+}
+.login-cont .login-cont-left .login-quote:after {
+  position: absolute;
+  content: "";
+  width: 150px;
+  height: 150px;
+  bottom: -150px;
+  right: 80px;
+  background-image: url("../../assets/dots.svg");
+}
+
+/* Responsive Queries ------------------------- BIG */
+@media only screen and (max-width: 1250px) {
+  /* Login CSS Responsive */
+  .login-cont .login-cont-right .login-form {
+    text-align: right;
+  }
+}
+
+/* Responsive Queries ------------------------- MEDIUM */
+@media only screen and (max-width: 1080px) {
+  /* Login CSS Responsive */
+  .login-cont {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr;
+  }
+  .login-cont .login-cont-left {
+    background: none;
+    height: 200px;
+  }
+  .login-cont .login-cont-right {
+    position: relative;
+    grid-template-rows: 300px 1fr;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    background-image: url("../../assets/2x/wolf_arrow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: -200px 200px;
+  }
+  .login-cont .login-cont-right .login-logo {
+    text-align: center;
+  }
+  .login-cont .login-cont-right .login-logo img {
+    position: relative;
+    margin: 0 auto;
+    max-width: 400px;
+    left: inherit;
+    right: inherit;
+  }
+  .login-cont .login-cont-right .login-form {
+    position: relative;
+    margin: 0 auto;
+    width: 270px;
+  }
+  .login-cont .login-cont-left .login-quote:before {
+    z-index: -1;
+    top: -100px;
+  }
+  .login-cont .login-cont-left .login-quote:after {
+    display: none;
+  }
+}
