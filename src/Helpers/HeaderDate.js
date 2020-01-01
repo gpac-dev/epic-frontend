@@ -5,8 +5,6 @@ import 'moment-timezone';
  
 import wolfears from '../assets/SVG/gpac-wolfears.svg';
 
-//var dateToFormat = 0;
-
 class HeaderDate extends Component {
   constructor(props){
     super(props);
@@ -14,7 +12,7 @@ class HeaderDate extends Component {
       date: '',
     }
   }
-  
+
   componentDidMount(){
     setInterval(() => {
       this.setState({
