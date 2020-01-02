@@ -21,6 +21,10 @@ class HeaderDate extends Component {
     }, 10);
   }
 
+  componentWillUnmount(){
+    clearInterval();
+  }
+
   render() {
     return (
       <Fragment>
