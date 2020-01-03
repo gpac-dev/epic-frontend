@@ -2,14 +2,6 @@ import React, { Component, Fragment } from 'react';
 import './Signin.css';
 import LOGO from '../../assets/GPAC-logo-WW.png';
 
-const validateForm = (errors) => {
-  let valid = true;
-  Object.values(errors).forEach(
-    (val) => val.length > 0 && (valid = false)
-  );
-  return valid;
-}
-
 class Signin extends Component {
   constructor(props){
     super(props);
@@ -19,7 +11,8 @@ class Signin extends Component {
       errors: {
         username: '',
         password: '',
-      }
+      },
+      formValid: false
     }
   }
 
@@ -30,11 +23,11 @@ class Signin extends Component {
 
   handleSubmitSignin = (event) => {
     event.preventDefault();
+    
     let { username, password } = this.state;
     console.log(username, password);
 
-    console.log(this.state.errors);
-    if(validateForm(this.state.errors)) {
+    if(this.validateForm(this.state.errors) && username && password) {
       console.info('Valid Form')
       //this.redirectUser();
     }else{
@@ -46,7 +39,12 @@ class Signin extends Component {
     event.preventDefault();
 
     const { name, value } = event.target;
+    console.log(name, value);
 
+    this.checkValidation(name, value);
+  }
+
+  checkValidation = (name, value) => {
     let errors = this.state.errors;
 
     switch (name) {
@@ -67,6 +65,15 @@ class Signin extends Component {
     }
 
     this.setState({ errors, [name]: value });
+  }
+
+  validateForm = (errors) => {
+    let valid = true;
+    Object.values(errors).forEach(
+      (val) => val.length > 0 && (valid = false)
+    );
+    this.setState({formValid: valid})
+    return valid;
   }
 
   redirectUser = () => {
@@ -99,7 +106,7 @@ class Signin extends Component {
                     {errors.password.length > 0 && <span className='error'>{errors.password}</span>}
                   </div>
 
-                  <button className="login-btn" type="submit">Sign In</button>
+                  <button className="login-btn" type="submit" disabled={!this.state.formValid}>Sign In</button>
                   <p>Forgot your password?</p>
                 </div>
               </div>
