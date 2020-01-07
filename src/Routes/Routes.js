@@ -2,17 +2,29 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Signin from '../Pages/Signin/Signin';
-import Dashboard from '../Pages/Dashboard/Dashboard';
+
 import NotFound from '../Pages/NotFound/NotFound';
+// import ListRoutes from './ListRoutes';
+// import PrivateRoute from './PrivateRoute';
+
+import Dashboard from '../Pages/Dashboard/Dashboard';
+import Search from '../Pages/Search/Search';
 
 class Routes extends Component {
   render() {
     return (
       <Router>
         <Switch>
-          <Route path="/" exact component={Signin} />
+          <Route exact path="/" component={Signin} />
           <Route path="/signin" component={Signin} />
+          <Route path="/forgot-password" component={Signin} />
+
+          {/* ListRoutes.map(props => <Route {...props} /> )*/}
+          {/* <PrivateRoute path="/dashboard" component={Dashboard} /> */}
+
           <Route path="/dashboard" component={Dashboard} />
+          <Route path="/search" component={Search} />
+
           <Route path="*">
             <NotFound />
           </Route>

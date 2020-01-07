@@ -1,31 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import './Dashboard.css';
 
-import Header from '../../Components/Dashboard/Header';
-import Menu from '../../Components/Dashboard/Menu';
-import Footer from '../../Components/Dashboard/Footer';
-import Content from '../../Components/Dashboard/Content';
+import Header from '../../Components/Layouts/Header';
+import Menu from '../../Components/Layouts/Menu';
+import Footer from '../../Components/Layouts/Footer';
 
 class Dashboard extends Component {
   render() {
     return (
-      <React.Fragment>
+      <Fragment>
         <div className="main-cont">
           {/* Header starts */}
-          <Header />
+            <Header />
           {/* Header end */}
           {/* Menu starts */}
-          <Menu />
+            <Menu />
           {/* Menu ends */}
           {/* Content starts */}
-          <Content />
+          
           {/* Content ends */}
           {/* Footer starts */}
-          <Footer />
+            <Footer />
           {/* Footer ends */}
         </div>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

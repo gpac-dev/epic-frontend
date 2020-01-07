@@ -3,6 +3,7 @@ import { Link, useRouteMatch } from 'react-router-dom';
 import $ from "jquery";
 
 import dbrd from '../../assets/SVG/nav-dbrd.svg';
+import cand from '../../assets/SVG/nav-cand.svg';
 import srch from '../../assets/SVG/nav-srch.svg';
 import jobs from '../../assets/SVG/nav-jobs.svg';
 import comp from '../../assets/SVG/nav-comp.svg';
@@ -143,11 +144,11 @@ class Menu extends Component {
     return (
       <Fragment>
         <div className="menu">
-          <MenuLink activeOnlyWhenExact={true} to="/dashboard" img={dbrd} label="Dashboard" />
           <MenuLink to="/search" img={srch} label="Search" />
-          <MenuLink to="/job-orders" img={jobs} label="Job Orders" />
-          <MenuLink to="/market" img={dbrd} label="Market" />
+          <MenuLink to="/candidates" img={cand} label="Candidates" />
           <MenuLink to="/companies" img={comp} label="Companies" />
+          <MenuLink to="/job-orders" img={jobs} label="Job Orders" />
+          <MenuLink activeOnlyWhenExact={true} to="/dashboard" img={dbrd} label="Dashboard" />
           <MenuLink to="/projects" img={spro} label="S. Projects" />
           <MenuLink to="/map" img={digi} label="Map" />
           <MenuLink to="/taks-tool" img={rolls} label="Tasks Tool" />
