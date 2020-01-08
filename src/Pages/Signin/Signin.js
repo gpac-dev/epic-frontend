@@ -12,24 +12,27 @@ class Signin extends Component {
         username: '',
         password: '',
       },
-      formValid: false
+      formValid: true
     }
   }
 
   componentDidMount() {
     document.title = 'EPIC | Signin | v1.0'
-    localStorage.clear();
+    //localStorage.clear();
+
+    localStorage.getItem("token") !== null ? this.props.history.push('search') : this.props.history.push('signin')
   }
 
   handleSubmitSignin = (event) => {
     event.preventDefault();
-    
+
     let { username, password } = this.state;
     console.log(username, password);
 
     if(this.validateForm(this.state.errors) && username && password) {
       console.info('Valid Form')
-      //this.redirectUser();
+      localStorage.setItem('token', '31ASR1A31RAF')
+      this.redirectUser();
     }else{
       console.error('Invalid Form')
     }
@@ -77,7 +80,7 @@ class Signin extends Component {
   }
 
   redirectUser = () => {
-    this.props.history.push('dashboard');
+    this.props.history.push('search');
   }
 
   render() {
@@ -96,19 +99,17 @@ class Signin extends Component {
                 <img src={LOGO} alt="Gpac" />
               </div>
               <div className="login-form">
-                <div className="login-form">
-                  <div>
-                    <input type="text" className="username" name="username" onChange={this.handleChange} placeholder="Username" autoComplete="username" noValidate />
-                    {errors.username.length > 0 && <span className='error'>{errors.username}</span>}
-                  </div>
-                  <div>
-                    <input type="password" className="password" name="password" onChange={this.handleChange} placeholder="Password" autoComplete="current-password" noValidate />
-                    {errors.password.length > 0 && <span className='error'>{errors.password}</span>}
-                  </div>
-
-                  <button className="login-btn" type="submit" disabled={!this.state.formValid}>Sign In</button>
-                  <p>Forgot your password?</p>
+                <div className={`input-box ${errors.username.length > 0 ? "input-error" : ""}`}>
+                  <input type="text" className="username" name="username" onChange={this.handleChange} placeholder="Username" autoComplete="username" noValidate />
+                  {errors.username.length > 0 && <span className='input-error-msg'>{errors.username}</span>}
                 </div>
+                <div className={`input-box ${errors.password.length > 0 ? "input-error" : ""}`}>
+                  <input type="password" className="password" name="password" onChange={this.handleChange} placeholder="Password" autoComplete="current-password" noValidate />
+                  {errors.password.length > 0 && <span className='input-error-msg'>{errors.password}</span>}
+                </div>
+
+                <button className="login-btn" type="submit" disabled={!this.state.formValid}>Sign In</button>
+                <p>Forgot your password?</p>
               </div>
             </div>
           </div>

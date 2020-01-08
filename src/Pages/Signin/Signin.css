@@ -10,6 +10,22 @@
   background-size: cover;
   overflow-y: hidden;
 }
+.input-box {
+  position: relative;
+}
+.input-error input {
+  border-bottom: 2px red solid !important;
+}
+.input-error-msg{
+  content: "Error Message";
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  color: red;
+  font-weight: 200;
+  font-size: 14px;
+  margin-top: 10px;
+}
 .login-cont .login-cont-left {
   position: relative;
   height: 100vh;
@@ -98,14 +114,6 @@
   bottom: -150px;
   right: 80px;
   background-image: url("../../assets/dots.svg");
-}
-
-/* Responsive Queries ------------------------- BIG */
-@media only screen and (max-width: 1250px) {
-  /* Login CSS Responsive */
-  .login-cont .login-cont-right .login-form {
-    text-align: right;
-  }
 }
 
 /* Responsive Queries ------------------------- MEDIUM */

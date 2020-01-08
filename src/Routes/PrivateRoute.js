@@ -8,9 +8,9 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
       localStorage.getItem("token") !== null ? (
         <Component {...props} />
       ) : (
-        <Redirect 
+        <Redirect
           to={{
-            pathname: 'login',
+            pathname: 'signin',
             state: { from: props.location }
           }}
         />

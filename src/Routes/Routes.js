@@ -5,7 +5,7 @@ import Signin from '../Pages/Signin/Signin';
 
 import NotFound from '../Pages/NotFound/NotFound';
 // import ListRoutes from './ListRoutes';
-// import PrivateRoute from './PrivateRoute';
+import PrivateRoute from './PrivateRoute';
 
 import Dashboard from '../Pages/Dashboard/Dashboard';
 import Search from '../Pages/Search/Search';
@@ -20,10 +20,10 @@ class Routes extends Component {
           <Route path="/forgot-password" component={Signin} />
 
           {/* ListRoutes.map(props => <Route {...props} /> )*/}
-          {/* <PrivateRoute path="/dashboard" component={Dashboard} /> */}
 
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/search" component={Search} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/search" component={Search} />
+
 
           <Route path="*">
             <NotFound />
