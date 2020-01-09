@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 import './Signin.css';
 import LOGO from '../../assets/GPAC-logo-WW.png';
 
+import AuthService from '../../Services/Auth';
+
 class Signin extends Component {
   constructor(props){
     super(props);
@@ -18,8 +20,6 @@ class Signin extends Component {
 
   componentDidMount() {
     document.title = 'EPIC | Signin | v1.0'
-    //localStorage.clear();
-
     localStorage.getItem("token") !== null ? this.props.history.push('search') : this.props.history.push('signin')
   }
 
@@ -31,8 +31,23 @@ class Signin extends Component {
 
     if(this.validateForm(this.state.errors) && username && password) {
       console.info('Valid Form')
-      localStorage.setItem('token', '31ASR1A31RAF')
-      this.redirectUser();
+      AuthService.signin({ username, password }).then(res => {
+        console.log('res', res);
+        if(res.status === 200){
+          if(res.data.twoFactorAuthentication){
+            localStorage.setItem("user", JSON.stringify(res.data));
+            this.redirectUser(1);
+          }else{
+            localStorage.setItem("token", JSON.stringify(res.data.token));
+            localStorage.setItem("refreshToken", JSON.stringify(res.data.refreshToken));
+            this.redirectUser(2);
+          }
+        }else {
+          //this.setState({message: res.message});
+        }
+      }).catch(err => {
+        console.log(err);
+      });
     }else{
       console.error('Invalid Form')
     }
@@ -53,14 +68,14 @@ class Signin extends Component {
     switch (name) {
       case 'username':
         errors.username =
-          value.length < 8
-            ? 'Full Name must be 8 characters long!'
+          value.length < 7
+            ? 'Full Name must be 7 characters long!'
             : '';
         break;
       case 'password':
         errors.password =
-          value.length < 8
-            ? 'Password must be 8 characters long!'
+          value.length < 7
+            ? 'Password must be 7 characters long!'
             : '';
         break;
       default:
@@ -79,8 +94,17 @@ class Signin extends Component {
     return valid;
   }
 
-  redirectUser = () => {
-    this.props.history.push('search');
+  redirectUser = (option) => {
+    switch(option){
+      case 1:
+        this.props.history.push('two-factor-authentication');
+      break;
+      case 2:
+        this.props.history.push('search');
+      break;
+      default:
+      break;
+    }
   }
 
   render() {
