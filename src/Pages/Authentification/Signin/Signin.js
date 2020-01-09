@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import './Signin.css';
-import LOGO from '../../assets/GPAC-logo-WW.png';
+import LOGO from '../../../assets/GPAC-logo-WW.png';
 
-import AuthService from '../../Services/Auth';
+import AuthService from '../../../Services/Auth';
 
 class Signin extends Component {
   constructor(props){

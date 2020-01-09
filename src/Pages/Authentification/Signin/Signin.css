@@ -6,7 +6,7 @@
   grid-template-rows: 1fr;
   height: 100vh;
   width: 100vw;
-  background-image: url("../../assets/2x/dt_bckg.jpg");
+  background-image: url("../../../assets/2x/dt_bckg.jpg");
   background-size: cover;
   overflow-y: hidden;
 }
@@ -29,7 +29,7 @@
 .login-cont .login-cont-left {
   position: relative;
   height: 100vh;
-  background-image: url("../../assets/2x/wolf_arrow.png");
+  background-image: url("../../../assets/2x/wolf_arrow.png");
   background-size: contain;
   background-position: center left;
   background-repeat: no-repeat;
@@ -104,7 +104,7 @@
   left: 100px;
   height: 150px;
   bottom: 80px;
-  background-image: url("../../assets/dots.svg");
+  background-image: url("../../../assets/dots.svg");
 }
 .login-cont .login-cont-left .login-quote:after {
   position: absolute;
@@ -113,7 +113,7 @@
   height: 150px;
   bottom: -150px;
   right: 80px;
-  background-image: url("../../assets/dots.svg");
+  background-image: url("../../../assets/dots.svg");
 }
 
 /* Responsive Queries ------------------------- MEDIUM */
@@ -133,7 +133,7 @@
     align-items: center;
     width: 100%;
     margin: 0 auto;
-    background-image: url("../../assets/2x/wolf_arrow.png");
+    background-image: url("../../../assets/2x/wolf_arrow.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: -200px 200px;
