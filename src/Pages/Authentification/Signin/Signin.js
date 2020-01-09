@@ -1,8 +1,11 @@
 import React, { Component, Fragment } from 'react';
-import './Signin.css';
+import { Link } from 'react-router-dom';
+
 import LOGO from '../../../assets/GPAC-logo-WW.png';
 
 import AuthService from '../../../Services/Auth';
+
+import './Signin.css';
 
 class Signin extends Component {
   constructor(props){
@@ -24,18 +27,18 @@ class Signin extends Component {
   }
 
   handleSubmitSignin = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     let { username, password } = this.state;
-    console.log(username, password);
+    
+    this.checkValidationSubmit(username, password)
 
-    if(this.validateForm(this.state.errors) && username && password) {
-      console.info('Valid Form')
+    if(this.validateForm(this.state.errors)) {
       AuthService.signin({ username, password }).then(res => {
-        console.log('res', res);
         if(res.status === 200){
           if(res.data.twoFactorAuthentication){
             localStorage.setItem("user", JSON.stringify(res.data));
+            localStorage.setItem("twoFactorAuthentication", JSON.stringify(res.data.twoFactorAuthentication));
             this.redirectUser(1);
           }else{
             localStorage.setItem("token", JSON.stringify(res.data.token));
@@ -49,7 +52,7 @@ class Signin extends Component {
         console.log(err);
       });
     }else{
-      console.error('Invalid Form')
+      this.setState({ formValid: true })
     }
   }
 
@@ -57,39 +60,42 @@ class Signin extends Component {
     event.preventDefault();
 
     const { name, value } = event.target;
-    console.log(name, value);
 
-    this.checkValidation(name, value);
+    this.checkValidationKeyDown(name, value);
   }
 
-  checkValidation = (name, value) => {
-    let errors = this.state.errors;
+  checkValidationKeyDown = (name, value) => {
+    let { errors } = this.state;
 
     switch (name) {
       case 'username':
-        errors.username =
-          value.length < 7
-            ? 'Full Name must be 7 characters long!'
-            : '';
+          errors.username = value.length < 7 ? 'Username must be 7 characters long!' : '';
         break;
       case 'password':
-        errors.password =
-          value.length < 7
-            ? 'Password must be 7 characters long!'
-            : '';
+          errors.password = value.length < 7 ? 'Password must be 7 characters long!' : '';
         break;
       default:
         break;
     }
-
     this.setState({ errors, [name]: value });
+  }
+
+  checkValidationSubmit = (username, password) => {
+    let { errors } = this.state;
+
+    if(username === '') {
+      errors.username = username.length < 7 ? 'Username is empty!' : '';
+      this.setState({ errors, 'username': username });
+    }
+    if(password === ''){
+      errors.password = password.length < 7 ? 'Password is empty!' : '';
+      this.setState({ errors, 'password': password });
+    }
   }
 
   validateForm = (errors) => {
     let valid = true;
-    Object.values(errors).forEach(
-      (val) => val.length > 0 && (valid = false)
-    );
+    Object.values(errors).forEach((val) => val.length > 0 && (valid = false));
     this.setState({formValid: valid})
     return valid;
   }
@@ -133,7 +139,9 @@ class Signin extends Component {
                 </div>
 
                 <button className="login-btn" type="submit" disabled={!this.state.formValid}>Sign In</button>
-                <p>Forgot your password?</p>
+                <Link to="/forgot-password" className="forgot-password">
+                  <p>Forgot your password?</p>
+                </Link>
               </div>
             </div>
           </div>

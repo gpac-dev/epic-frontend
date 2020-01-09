@@ -80,10 +80,17 @@
   font-weight: 400;
   font-size: 16px;
 }
+.login-cont .login-cont-right .login-form .login-btn{
+  cursor: pointer;
+}
 .login-cont .login-cont-right .login-form p {
   font-weight: 200;
   color: #9aa0af;
 }
+.login-cont .login-cont-right .login-form .forgot-password{
+  text-decoration: none;
+}
+
 .login-cont .login-cont-left .login-quote {
   position: relative;
   margin: 0 auto;

@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 
-import './ForgotPassword.css';
+import './ResetPassword.css';
 
-class ForgotPassword extends Component {
+class ResetPassword extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -16,11 +16,11 @@ class ForgotPassword extends Component {
   render() {
     return (
       <Fragment>
-        <h1>ForgotPassword</h1>
+        <h1>ResetPassword</h1>
         <button onClick={this.hereClick}>Here!</button>
       </Fragment>
     );
   }
 }
 
-export default ForgotPassword;
+export default ResetPassword;
