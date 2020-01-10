@@ -12,11 +12,13 @@ import NotFound from '../Pages/NotFound/NotFound';
 
 import Dashboard from '../Pages/Dashboard/Dashboard';
 import Search from '../Pages/Search/Search';
+import InternetConnection from '../Helpers/InternetConnection';
 
 class Routes extends Component {
   render() {
     return (
       <Router>
+        <InternetConnection />
         <Switch>
           <Route exact path="/" component={Signin} />
           <Route exact path="/signin" component={Signin} />

@@ -3,8 +3,11 @@ import React, { Fragment, Component } from 'react';
 import profile_pic from '../../assets/profile_pic@2x.png';
 import HeaderDate from '../../Helpers/HeaderDate';
 
+import Auth from '../../Services/Auth';
+
 class Header extends Component {
   render() {
+    const { username } = Auth.getUserInfo()
     return (
       <Fragment>
         <div className="header">
@@ -14,7 +17,7 @@ class Header extends Component {
               <img src={profile_pic} alt="Profile" />
             </div>
             <div className="hl-welcome">
-              <p>Welcome <strong>Jonathan</strong></p>
+              <p>Welcome <strong>{username.toUpperCase()}</strong></p>
             </div>
           </div>
           <HeaderDate />

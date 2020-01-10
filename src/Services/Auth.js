@@ -15,15 +15,11 @@ class AuthService {
     return localStorage.getItem("refreshToken");
   }
 
-  getTwoFactorAuthentication(){
-    return localStorage.getItem("twoFactorAuthentication");
-  }
-
   getUserInfo(){
     return JSON.parse(localStorage.getItem("user"));
   }
 
-  getAuthHeader() {
+  getAuthorizationHeader() {
     return { headers: { Authorization: 'Bearer ' + this.getUserInfo().token } };
   }
 
