@@ -1,0 +1,572 @@
+/* Content CSS - - - New Search - - - */
+.content {
+  grid-area: c;
+}
+.main-cont .content .quickactions {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  padding: 20px 0px;
+}
+.quickactions .q-btn {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 14px;
+  text-align: center;
+  width: 200px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+.quickactions .q-btn:hover {
+  transition-duration: 0.5s;
+  transform: scale(1.2);
+}
+.main-cont .content .content-new-search {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.main-cont .content .content-new-search .cns-cell {
+  position: relative;
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+.main-cont .content .content-new-search .cns-cell .search-bar {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 500px;
+}
+/* Content CSS - - - New Search - - - Search Bar */
+.main-cont .content .content-new-search .cns-cell .search-bar .search-input {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: 0px;
+  padding: 25px 0px 25px 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.05);
+}
+.main-cont .content .content-new-search .cns-cell .search-bar .search-bar-btn {
+  position: absolute;
+  height: 50px;
+  width: 40px;
+  z-index: 1;
+  top: 0px;
+  right: 0px;
+  background: transparent;
+  border: none;
+  background-image: url("../../assets/SVG/nav-srch.svg");
+  background-size: 24px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/* Content CSS - - - New Search - - - Title Quote */
+.main-cont .content .content-new-search .cns-cell .search-bar .title-quote {
+  color: #20232b;
+  font-size: 20px;
+}
+.search-btn {
+  position: relative;
+  margin-top: 30px;
+  margin-left: 10px;
+  display: inline-block;
+  width: 190px;
+  padding: 8px 0px;
+  text-align: center;
+  background-color: #c40001;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.05);
+}
+/* Content CSS - - - New Search - - - Filters Box */
+.fbx-joborders,
+.fbx-companies {
+  position: relative;
+  display: none;
+}
+.main-cont .content .content-new-search .cns-cell .search-bar .filters-box {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: none;
+}
+.main-cont .content .content-new-search .cns-cell .search-bar .filters-box .fbx-grid {
+  position: relative;
+  display: grid;
+  width: 100%;
+  max-width: 500px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 0px 30px;
+}
+.f-1-col {
+  position: relative;
+  grid-column: span 1;
+}
+.f-2-col {
+  position: relative;
+  grid-column: span 2;
+}
+.f-3-col {
+  position: relative;
+  grid-column: span 3;
+}
+.filters-box .filters-range-exp .filters-range-exp-label {
+  font-weight: 300;
+}
+.filters-box .filters-field {
+  position: relative;
+  border: none;
+  border-bottom: #1a1c21 solid 2px;
+  background: transparent;
+  margin-top: 30px;
+  border-radius: 0px;
+  width: 100%;
+  padding: 10px 0px;
+  font-size: 16px;
+  font-weight: 300;
+}
+.filters-box .filters-select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 10px 0px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.filters-box .filters-select .arrow {
+  position: absolute;
+  top: 17px;
+  right: 10px;
+  z-index: 10;
+  border: solid #4056f4;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+}
+
+.filters-box .filters-select .filters-select-list {
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  width: 99%;
+  height: 0px;
+  padding: 0px;
+  overflow-y: scroll;
+  list-style: none;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  z-index: 10;
+}
+.filters-box .filters-select .filters-select-list .filters-select-option {
+  margin: 5px 0px;
+  padding: 7px 3px;
+  list-style: none;
+  border-bottom: rgba(250, 250, 250) solid 1px;
+  font-size: 14px;
+}
+.filters-select-option:hover {
+  background-color: #1a1c21;
+  color: white;
+}
+.filters-box .filters-range {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 500px;
+  margin: 15px 0px;
+  text-align: left;
+  cursor: pointer;
+}
+.filters-box .filters-range-label {
+  font-weight: 200;
+}
+.filters-box .filters-range-label p {
+  display: inline;
+}
+.filters-box .filters-range-bar {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #9aa0af;
+  margin-top: 8px;
+}
+.filters-box .filters-range-bar .filters-range-selection {
+  position: relative;
+  width: 60%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #1a1c21;
+  z-index: 1;
+}
+.filters-box .filters-range-bar .filters-range-selection .min-dot {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: #4056f4;
+}
+.filters-box .filters-range-bar .filters-range-selection .min-dot:hover {
+  transition-duration: 0.5s;
+  width: 13px;
+  height: 13px;
+  top: -5px;
+}
+.filters-box .filters-range-bar .filters-range-selection .min-dot span {
+  position: absolute;
+  display: none;
+  bottom: -20px;
+  left: -3px;
+}
+.filters-box .filters-range-bar .filters-range-selection .max-dot {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: #4056f4;
+}
+
+.filters-box .filters-range-bar .filters-range-selection .max-dot:hover {
+  transition-duration: 0.2s;
+  animation-timing-function: ease-in-out;
+  width: 13px;
+  height: 13px;
+  top: -5px;
+}
+
+.filters-box .filters-range-bar .filters-range-selection .max-dot span {
+  position: absolute;
+  display: none;
+  bottom: -20px;
+  left: -3px;
+}
+.filters-box .filters-range-count {
+  float: right;
+  border: none;
+  border-bottom: #1a1c21 solid 2px;
+  background: transparent;
+  border-radius: 0px;
+  width: 50px;
+  padding: 0px 0px;
+  margin: 0px 0px 0px 50px;
+  font-size: 14px;
+  font-weight: 300;
+}
+.filters-box .filters-check-relo {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  top: 10px;
+  margin-top: 20px;
+}
+.filters-box .filters-check-relo .filters-check-relo-label {
+  font-weight: 300;
+  display: block;
+}
+.filters-box .filters-check-relo .filters-check-relo-option {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+}
+.filters-box .filters-check-relo .filters-check-relo-option .relo-option {
+  position: absolute;
+  opacity: 0;
+  left: 0px;
+  top: 0px;
+  width: 50px;
+  z-index: 2;
+  cursor: pointer;
+}
+.filters-box .filters-check-relo .filters-check-relo-option .checkradio {
+  position: relative;
+  float: left;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  top: 2px;
+  margin-right: 5px;
+  border: 1px solid #1a1c21;
+  z-index: 1;
+}
+.filters-box .filters-check-relo .filters-check-relo-option:hover input ~ .checkradio {
+  transition-duration: 0.5s;
+  background-color: #dfe1e8;
+}
+.filters-box .filters-check-relo .filters-check-relo-option input:checked ~ .checkradio {
+  transition-duration: 0.5s;
+  background-color: #4056f4;
+  border: 1px solid white;
+}
+.filters-box .filters-check-relo .filters-check-relo-option input:checked ~ .checkradio:after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  background-color: white;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  border-radius: 3px;
+}
+/* Content CSS - - - New Search - - - Entity Selector */
+.main-cont .content .content-new-search .cns-cell .entity-select {
+  position: relative;
+  margin: 20px auto;
+  width: 500px;
+  border: #1a1c21 2px solid;
+  border-radius: 3px;
+  text-align: center;
+}
+.main-cont .content .content-new-search .cns-cell .entity-select .es-option {
+  transition-duration: 0.5s;
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  width: 160px;
+  padding: 8px 0px;
+  cursor: pointer;
+  margin: 0;
+  z-index: 2;
+}
+.main-cont .content .content-new-search .cns-cell .entity-select .entity-selector-rect {
+  position: absolute;
+  width: 180px;
+  height: 100%;
+  background-color: #1a1c21;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.1);
+}
+.main-cont .content .content-new-search .cns-cell .entity-select-list {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 500px;
+  display: none;
+}
+.main-cont .content .content-new-search .cns-cell .entity-select-list .esl-btn {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 300px;
+  margin-bottom: 20px;
+  text-align: left;
+  color: white;
+  padding: 10px 5px;
+  border-radius: 3px;
+  background-color: #20232b;
+  cursor: pointer;
+}
+.main-cont .content .content-new-search .cns-cell .entity-select-list .esl-list {
+  position: absolute;
+  top: 42px;
+  left: calc(50% - 150px);
+  z-index: 80;
+  width: 100%;
+  max-width: 300px;
+  background-color: white;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+.main-cont .content .content-new-search .cns-cell .entity-select-list .esl-list .es-option {
+  width: 100%;
+  padding: 15px 0px;
+  border-bottom: 1px solid rgb(250, 250, 250);
+}
+.main-cont .content .content-new-search .cns-cell .entity-select-list .esl-list .es-option:hover {
+  color: white;
+  background-color: #5c6171;
+  cursor: pointer;
+}
+.es-active {
+  transition-duration: 0.5s;
+  color: white;
+}
+.w-arrow {
+  position: absolute;
+  border: white solid;
+  top: 10px;
+  right: 15px;
+  border-width: 0px 3px 3px 0px;
+  padding: 5px;
+  transform: rotate(45deg);
+}
+/* Content CSS - - - New Search - - - Filters Button*/
+.main-cont .content .content-new-search .cns-cell .filters-btn-open {
+  position: relative;
+  display: inline-block;
+  width: 190px;
+  padding: 5px 0px;
+  border-radius: 3px;
+  font-size: 16px;
+  color: #4056f4;
+  border: 1px #4056f4 solid;
+  margin-top: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.main-cont .content .content-new-search .cns-cell .filters-btn-open p {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  width: 150px;
+}
+
+.main-cont .content .content-new-search .cns-cell .filters-btn-open img {
+  position: relative;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  top: 0px;
+  background-size: cover;
+}
+.filters-controls {
+  position: relative;
+  display: none;
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+}
+.main-cont .content .content-new-search .cns-cell .filters-btn-close {
+  position: relative;
+  font-size: 18px;
+  color: #9aa0af;
+  margin-top: 30px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.main-cont .content .content-new-search .cns-cell .filters-btn-close p {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  width: 180px;
+}
+
+.main-cont .content .content-new-search .cns-cell .filters-btn-close img {
+  position: relative;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  top: 0px;
+  background-size: cover;
+}
+.main-cont .content .content-new-search .cns-cell .filters-btn-clear {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  color: #9aa0af;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.main-cont .content .content-new-search .cns-cell .filters-btn-clear p {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  width: 100px;
+}
+
+.main-cont .content .content-new-search .cns-cell .filters-btn-clear img {
+  position: relative;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  top: 0px;
+  background-size: cover;
+}
+/* Footer CSS ------------------------- */
+.main-cont .footer {
+  grid-area: f;
+  padding-right: 15px;
+  padding-top: 6px;
+  background-color: #eff1f4;
+  font-weight: 200;
+  font-size: 14px;
+  box-shadow: 0px -2px 18px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+  text-align: right;
+}
+/* Responsive Queries ------------------------- BIG */
+@media only screen and (max-width: 1250px) {
+}
+/* Responsive Queries ------------------------- MEDIUM */
+@media only screen and (max-width: 1080px) {
+}
+/* Responsive Queries ------------------------- SMALL */
+@media only screen and (max-width: 735px) {
+  /* Search Bar CSS Responsive */
+  .main-cont .content .content-new-search .cns-cell .entity-select {
+    display: none;
+  }
+  .main-cont .content .content-new-search .cns-cell .search-bar .search-input {
+    width: 100%;
+  }
+  .main-cont .content .content-new-search .cns-cell .entity-select-list {
+    position: relative;
+    width: 100%;
+  }
+  /* Quick Actions Responsive */
+  .quickactions .q-btn {
+    width: 80px;
+  }
+  .quickactions .q-btn p {
+    display: none;
+  }
+  /* Filter Box CSS Responsive */
+  .main-cont .content .content-new-search .cns-cell .search-bar .filters-box .fbx-candidates {
+    grid-template-columns: 1fr;
+  }
+  .f-1-col {
+    grid-column: span 3;
+  }
+  .f-2-col {
+    grid-column: span 1;
+  }
+  .filters-box .filters-range-count {
+    float: inherit;
+    margin: 0px 20px 10px 0px;
+  }
+  .filters-box .filters-range-label p {
+    display: block;
+  }
+  .main-cont .content .content-search-results .filters-box-sr {
+    width: 90%;
+    height: 90%;
+    left: inherit;
+  }
+  /* Entity Selector CSS Responsive */
+  .main-cont .content .content-new-search .cns-cell .entity-select {
+    display: none;
+  }
+  .main-cont .content .content-new-search .cns-cell .entity-select-list {
+    display: block;
+  }
+}

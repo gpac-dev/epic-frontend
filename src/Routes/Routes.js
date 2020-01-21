@@ -22,9 +22,9 @@ class Routes extends Component {
         <Switch>
           <Route exact path="/" component={Signin} />
           <Route exact path="/signin" component={Signin} />
-          <Route exact path="/forgot-password" component={ForgotPassword} />
-          <Route exact path="/reset-password/:hash" component={ResetPassword} />
-          <Route exact path="/two-factor-authentication" component={TwoFactorAuthentication} />
+          <Route exact path="/account/forgot-password" component={ForgotPassword} />
+          <Route exact path="/account/reset-password/:hash" component={ResetPassword} />
+          <Route exact path="/account/two-factor-authentication" component={TwoFactorAuthentication} />
 
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <PrivateRoute exact path="/search" component={Search} />

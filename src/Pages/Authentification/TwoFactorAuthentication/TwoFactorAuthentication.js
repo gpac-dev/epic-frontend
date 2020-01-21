@@ -25,7 +25,7 @@ class TwoFactorAuthentication extends Component {
 
       //Send post api for get code authentication with email 
     }else{
-      this.props.history.push('search')
+      this.props.history.push('/search')
     }
   }
 
@@ -36,7 +36,7 @@ class TwoFactorAuthentication extends Component {
     localStorage.setItem("token", JSON.stringify(this.state.token))
     localStorage.setItem("refreshToken", JSON.stringify(this.state.refreshToken))
 
-    this.props.history.push('search')
+    this.props.history.push('/search')
   }
 
   render() {

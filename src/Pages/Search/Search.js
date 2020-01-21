@@ -5,6 +5,7 @@ import './Search.css';
 import Header from '../../Components/Layouts/Header';
 import Menu from '../../Components/Layouts/Menu';
 import Footer from '../../Components/Layouts/Footer';
+import ContentSearch from '../../Components/Search/Content';
 
 class Search extends Component {
   render() {
@@ -18,7 +19,7 @@ class Search extends Component {
             <Menu />
           {/* Menu ends */}
           {/* Content starts */}
-          
+            <ContentSearch />
           {/* Content ends */}
           {/* Footer starts */}
             <Footer />

@@ -36,7 +36,7 @@ class Signin extends Component {
     if(this.validateForm(this.state.errors)) {
       AuthService.signin({ username, password }).then(res => {
         if(res.status === 200){
-          if(res.data.twoFactorAuthentication){
+          if(res.data.two_factor_authentication){
             localStorage.setItem("user", JSON.stringify(res.data));
             localStorage.setItem("twoFactorAuthentication", JSON.stringify(res.data.twoFactorAuthentication));
             this.redirectUser(1);
@@ -103,7 +103,7 @@ class Signin extends Component {
   redirectUser = (option) => {
     switch(option){
       case 1:
-        this.props.history.push('two-factor-authentication');
+        this.props.history.push('account/two-factor-authentication');
       break;
       case 2:
         this.props.history.push('search');
@@ -139,7 +139,7 @@ class Signin extends Component {
                 </div>
 
                 <button className="login-btn" type="submit" disabled={!this.state.formValid}>Sign In</button>
-                <Link to="/forgot-password" className="forgot-password">
+                <Link to="/account/forgot-password" className="forgot-password">
                   <p>Forgot your password?</p>
                 </Link>
               </div>

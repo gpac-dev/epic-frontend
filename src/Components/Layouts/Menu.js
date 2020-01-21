@@ -14,126 +14,73 @@ import sends from '../../assets/SVG/nav-sends.svg';
 
 class Menu extends Component {
   componentDidMount() {
-    $(".menu").click(function() {
-      $(".main-cont").toggleClass("menu-open");
-    });
-
-    $(".hl-menubtn").click(function() {
-      if ($(".menu").hasClass("ismobile")) {
-        /* - #OpenMenu - */
-        if ($(".menu").hasClass("expanded")) {
-          $(".menu").removeClass("expanded");
-          $(".m-btn").fadeOut("fast");
-          $(".m-btn p")
-            .stop(true)
-            .animate(
+    $(document).ready(function() {
+      responsiveClass();
+    
+      $(".hl-menubtn").click(function() {
+        if ($(".menu").hasClass("ismobile")) {
+          if ($(".menu").hasClass("opened")) {
+            $(".menu").removeClass("opened");
+            $(".menu").animate(
               {
-                opacity: "0"
+                left: "-130px"
               },
               200
             );
-          $(".menu")
-            .stop(true)
-            .delay(200)
-            .animate(
+          } else {
+            $(".menu").addClass("opened");
+            $(".menu").animate(
               {
-                width: "60px",
-                left: "-60px"
-              },
-              200
-            );
-          $(".m-btn img")
-            .stop(true)
-            .animate(
-              {
-                marginLeft: "20px"
-              },
-              200
-            );
-        } else {
-          $(".menu").addClass("expanded");
-          $(".m-btn").fadeIn("fast");
-          $(".menu")
-            .stop(true)
-            .animate(
-              {
-                width: "130px",
                 left: "0px"
               },
               200
             );
-          $(".m-btn img")
-            .stop(true)
-            .animate(
-              {
-                marginLeft: "15px"
-              },
-              200
-            );
-          $(".m-btn p")
-            .delay(200)
-            .animate(
-              {
-                opacity: "1"
-              },
-              700
-            );
+          }
+        } else {
         }
-      } else {
-        if ($(".menu").hasClass("expanded")) {
+      });
+    
+      $(window).resize(function() {
+        responsiveClass();
+      });
+    
+      /* Responsive Class */
+      function responsiveClass() {
+        if ($(window).width() <= 735) {
+          $(".menu").addClass("ismobile");
+        } else {
+          $(".menu").removeClass("ismobile");
+        }
+        /* Responsive Class - MENU */
+        if ($(".menu").hasClass("ismobile")) {
           $(".menu").removeClass("expanded");
-          $(".m-btn p")
-            .stop(true)
-            .animate(
-              {
-                opacity: "0"
-              },
-              200
-            );
+          $(".main-cont .header .h-left").removeClass("grid-2fr-3fr");
+          $(".hl-menubtn").css({
+            position: "relative",
+            left: "0px"
+          });
           $(".menu")
             .stop(true)
-            .delay(200)
             .animate(
               {
-                width: "60px"
-              },
-              200
-            );
-          $(".m-btn img")
-            .stop(true)
-            .animate(
-              {
-                marginLeft: "20px"
+                left: "-130px"
               },
               200
             );
         } else {
           $(".menu").addClass("expanded");
-          $(".m-btn").fadeIn("fast");
+          $(".main-cont .header .h-left").addClass("grid-2fr-3fr");
+          $(".hl-menubtn").css({
+            position: "absolute",
+            left: "-100px"
+          });
           $(".menu")
             .stop(true)
             .animate(
               {
-                width: "130px",
                 left: "0px"
               },
               200
-            );
-          $(".m-btn img")
-            .stop(true)
-            .animate(
-              {
-                marginLeft: "15px"
-              },
-              200
-            );
-          $(".m-btn p")
-            .delay(200)
-            .animate(
-              {
-                opacity: "1"
-              },
-              700
             );
         }
       }
@@ -143,7 +90,7 @@ class Menu extends Component {
   render() {
     return (
       <Fragment>
-        <div className="menu">
+        <div className="menu expanded">
           <MenuLink to="/search" img={srch} label="Search" />
           <MenuLink to="/candidates" img={cand} label="Candidates" />
           <MenuLink to="/companies" img={comp} label="Companies" />
@@ -169,7 +116,7 @@ function MenuLink({ to, img, label, activeOnlyWhenExact }) {
     <Link to={to} className={match ? "m-btn  mbtn-active" : "m-btn not-available"}>
       <img src={img} alt={label} />
       <p>{label}</p>
-  </Link>
+    </Link>
   );
 }
 

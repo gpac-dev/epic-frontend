@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="39" height="29.375" viewBox="0 0 39 29.375">
+  <g id="Group_841" data-name="Group 841" transform="translate(-669 -154)">
+    <g id="brifcase" transform="translate(669 155.875)">
+      <g id="Group_570" data-name="Group 570" transform="translate(10 2)">
+        <path id="Path_324" data-name="Path 324" d="M17.375,7.1H8.625A.632.632,0,0,1,8,6.462V3.913A1.9,1.9,0,0,1,9.875,2h6.25A1.9,1.9,0,0,1,18,3.913v2.55A.632.632,0,0,1,17.375,7.1ZM9.25,5.825h7.5V3.913a.632.632,0,0,0-.625-.638H9.875a.632.632,0,0,0-.625.638Z" transform="translate(-8 -2)" fill="#20232b"/>
+      </g>
+      <g id="Group_571" data-name="Group 571" transform="translate(0 5.825)">
+        <path id="Path_325" data-name="Path 325" d="M.19,12.577l10.372,2.76a17.275,17.275,0,0,0,8.874,0l10.374-2.76a.638.638,0,0,1,.19-.01V6.912A1.9,1.9,0,0,0,28.125,5H1.875A1.9,1.9,0,0,0,0,6.912v5.655A.638.638,0,0,1,.19,12.577ZM15,10.1a2.551,2.551,0,1,1-2.5,2.55A2.528,2.528,0,0,1,15,10.1Z" transform="translate(0 -5)" fill="#20232b"/>
+        <path id="Path_326" data-name="Path 326" d="M19.765,14.7A18.55,18.55,0,0,1,15,15.326a18.511,18.511,0,0,1-4.766-.622L0,11.98V22.843a1.9,1.9,0,0,0,1.875,1.912h26.25A1.9,1.9,0,0,0,30,22.843V11.98Z" transform="translate(0 -3.081)" fill="#20232b"/>
+        <ellipse id="Ellipse_157" data-name="Ellipse 157" cx="1.25" cy="1.275" rx="1.25" ry="1.275" transform="translate(13.75 6.375)" fill="#20232b"/>
+      </g>
+    </g>
+    <text id="_" data-name="+" transform="translate(704 167)" fill="#20232b" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="-3.401" y="0">+</tspan></text>
+  </g>
+</svg>

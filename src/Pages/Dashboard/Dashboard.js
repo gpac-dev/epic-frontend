@@ -18,7 +18,7 @@ class Dashboard extends Component {
             <Menu />
           {/* Menu ends */}
           {/* Content starts */}
-          
+            <div class="content"></div>
           {/* Content ends */}
           {/* Footer starts */}
             <Footer />
